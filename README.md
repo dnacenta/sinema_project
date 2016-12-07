@@ -1,24 +1,11 @@
-# README
+# Sinema Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails app. Matches friends and films.
 
-Things you may want to cover:
+Create a group and add your friends, those ones who love films.
 
-* Ruby version
+You will be able to check the latest films out or even add your favourite ones. Then the group pick the ones that want to watch and do the matching between the friends who want to watch the film.
 
-* System dependencies
+Then you will be able to organise yourselves and choose a date to watch it.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Still in progress.
