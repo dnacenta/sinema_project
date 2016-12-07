@@ -1,7 +1,4 @@
 <header>
   <%= link_to "#{@user.name}", {controller: 'users', action: 'show', id: @user.id} %>
 </header>
-
-<h2>Forbidden</h2>
-
-<img id="forbidden" src='/assets/forbidden.png' alt="forbidden">
+<h2><%=@group.name%></h2>
