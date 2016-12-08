@@ -26,9 +26,21 @@ class GroupsController < ApplicationController
     render 'show'
   end
 
+  def add_user
+    @user = current_user
+    group = @user.groups.find_by(id: params[:id])
+    new_user = User.find(params[:name])
+    unless new_user
+      render 'User not found'
+      return
+    end
+    @user.group.push(new_user)
+  end
+
   private
 
   def group_params
     params.require(:group).permit(:name)
+    params.require(:user).permit(:name)
   end
 end

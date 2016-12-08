@@ -40,7 +40,7 @@ function showEvents(response) {
     var posterUrl = film.poster_path
     var poster    = imageUrl + posterUrl;
     var web       = 'https://developers.themoviedb.org/';
-    var html = '<li><a href="' + web +'"><img src="' + poster + '"></li>';
+    var html = '<li><a href="' + web +'"><img id="film" src="' + poster + '"></li>';
 
     $('#img').append(html);
 
