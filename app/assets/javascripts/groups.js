@@ -39,11 +39,7 @@ function showEvents(response) {
   films.forEach(function(film) {
     var posterUrl = film.poster_path
     var poster    = imageUrl + posterUrl;
-    var html = `
-      <li>
-        <img src="${poster}">
-      </li>
-    `;
+    var html = '<li><img src="' + poster + '"></li>';
 
     $('#img').append(html);
 
