@@ -6,4 +6,29 @@ class GroupsController < ApplicationController
       render 'forbidden'
     end
   end
+
+  def new
+    @user = User.find(params[:user_id])
+    unless @user
+      render 'forbidden'
+      return
+    end
+    @group = Group.new
+  end
+
+  def create
+    @user = User.find(params[:user_id])
+    unless @user
+      render 'forbidden'
+      return
+    end
+    @group = @user.groups.create(group_params)
+    render 'show'
+  end
+
+  private
+
+  def group_params
+    params.require(:group).permit(:name)
+  end
 end

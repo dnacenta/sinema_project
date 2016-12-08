@@ -1,0 +1,11 @@
+<header>
+  <%= link_to "#{@user.name}", {controller: 'users', action: 'show', id: @user.id} %>
+</header>
+
+<h1>New Group</h1>
+
+<%= form_for [@user, @group] do |f| %>
+    <%= f.label      :name %><br>
+    <%= f.text_field :name, placeholder: "Group 1" %>
+    <%= f.submit %>
+<% end %>
