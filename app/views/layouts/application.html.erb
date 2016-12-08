@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <div id="top_bar">
       <% if user_signed_in? %>
         <p><%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>

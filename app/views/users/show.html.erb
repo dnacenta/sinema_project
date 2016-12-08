@@ -1,7 +1,9 @@
 <h2><%= @user.name %>!</h2>
 
 <%@user.groups.each do |group|%>
-<%= link_to "#{group.name}", {controller: 'groups', action: 'show', user_id: @user.id, id: group.id} %>
+  <button id="btn-group" type="button">
+    <%= link_to "#{group.name}", {controller: 'groups', action: 'show', user_id: @user.id, id: group.id} %>
+  </button>
 <%end%>
 
 <%= link_to "New Group", {controller: 'groups', action: 'new', user_id: @user.id} %>
