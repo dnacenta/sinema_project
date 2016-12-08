@@ -39,11 +39,12 @@ function showEvents(response) {
   films.forEach(function(film) {
     var posterUrl = film.poster_path
     var poster    = imageUrl + posterUrl;
-    var html = '<li><img src="' + poster + '"></li>';
+    var web       = 'https://developers.themoviedb.org/';
+    var html = '<li><a href="' + web +'"><img src="' + poster + '"></li>';
 
     $('#img').append(html);
 
-    console.log(film.original_title);
+    console.log(film);
   });
 }
 
