@@ -52,5 +52,4 @@ function handleError(error){
 
 $(document).on('ready', function(){
   getEvents();
-  $('#btn-group').on('click', getEvents);
 })
