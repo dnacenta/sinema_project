@@ -31,6 +31,7 @@ class GroupsController < ApplicationController
 
   def add_user
     @user = current_user
+    @group = @user.groups.find_by(id: params[:id])
     @new_user = User.find_by(name: params[:new_user][:name])
     unless @new_user
       render 'forbidden'
@@ -38,6 +39,7 @@ class GroupsController < ApplicationController
     end
     group = @user.groups.find_by(id: params[:id])
     group.users.push(@new_user)
+    render 'show'
   end
 
   private
