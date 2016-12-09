@@ -2,9 +2,9 @@ class Group < ApplicationRecord
   has_many :subscriptions
   has_many :users, through: :subscriptions
 
-  def self.auto_delete
+  def auto_delete
     if self.users.empty?
-      self.delete
+      self.destroy
     end
   end
 end

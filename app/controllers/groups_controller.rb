@@ -44,7 +44,11 @@ class GroupsController < ApplicationController
   def exit_group
     @user = current_user
     group = @user.groups.find_by(id: params[:id])
-    group.users.destroy(@user)
+    members = group.users
+    members.destroy(@user)
+    if members.empty?
+      group.destroy
+    end
     redirect_to user_url
   end
 
