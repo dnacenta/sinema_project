@@ -1,12 +1,17 @@
 
-<%= link_to "#{@user.name}", {controller: 'users', action: 'show', id: @user.id} %>
+<%= link_to user_path(@user), method: :get do %>
+  <%= @user.name %>
+<% end %>
 
 <h2><%=@group.name%></h2>
 
-<%= link_to "Add User", {controller: 'groups', action: 'add_user', user_id: @user.id, id: @group.id} %>
+<%= link_to add_user_path(@user, @group), method: :get do %>
+  Add User
+<% end %>
 
-<%= link_to "Exit Group", {controller: 'groups', action: 'exit_group', user_id: @user.id, id: @group.id} %>
-
+<%= link_to exit_group_path(@user, @group), method: :get do %>
+  Exit Group
+<% end %>
 
  <!-- <ul>
   <% @group.users.each do |user| %>

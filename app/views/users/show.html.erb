@@ -1,9 +1,15 @@
 <h2><%= @user.name %>!</h2>
 
 <%@user.groups.each do |group|%>
+
   <button id="btn-group" type="button">
-    <%= link_to "#{group.name}", {controller: 'groups', action: 'show', user_id: @user.id, id: group.id} %>
+    <%= link_to user_group_path(@user, group), method: :get do %>
+      <%= group.name %>
+    <% end %>
   </button>
+  
 <%end%>
 
-<%= link_to "New Group", {controller: 'groups', action: 'new', user_id: @user.id} %>
+<%= link_to new_user_group_path(@user), method: :get do %>
+  New Group
+<% end %>

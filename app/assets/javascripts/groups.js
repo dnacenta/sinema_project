@@ -10,19 +10,16 @@ function getEvents(){
   var day          = date.getUTCDate();
 
   if (firstMonth === 12) {
-    var lastMonth    = 1;
-    var lastYear         = date.getUTCFullYear()+1;
+    var lastMonth = 1;
+    var lastYear  = date.getUTCFullYear()+1;
   }
   else {
-    var lastMonth    = date.getUTCMonth() + 2;
-    var lastYear         = date.getUTCFullYear();
+    var lastMonth = date.getUTCMonth() + 2;
+    var lastYear  = date.getUTCFullYear();
   }
 
-  var rdg          = firstYear + "-" + (firstMonth-1) + "-" + day;
-  var rdl          = lastYear + "-" + (lastMonth) + "-" + day;
-
-  console.log(rdg);
-  console.log(rdl);
+  var rdg = firstYear + "-" + (firstMonth-1) + "-" + day;
+  var rdl = lastYear + "-" + (lastMonth) + "-" + day;
 
   $.ajax({
       type: "GET",
@@ -43,8 +40,7 @@ function showEvents(response) {
     var html = '<li><a href="' + web +'"><img id="film" src="' + poster + '"></li>';
 
     $('#img').append(html);
-
-    console.log(film);
+    console.log('You are walking forward bro!');
   });
 }
 
@@ -52,4 +48,6 @@ function handleError(error){
   console.log(error);
 }
 
-getEvents();
+//----------------------------------//
+
+$('.group.show').on('ready', getEvents)

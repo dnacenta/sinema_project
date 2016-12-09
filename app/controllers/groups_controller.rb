@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     unless @user
-      render 'forbidden'
+      render 'not_found'
       return
     end
     @group = Group.new
@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
     @group = @user.groups.find_by(id: params[:id])
     @new_user = User.find_by(name: params[:new_user][:name])
     unless @new_user
-      render 'notfound'
+      render 'not_found'
       return
     end
     @group.users.push(@new_user)
