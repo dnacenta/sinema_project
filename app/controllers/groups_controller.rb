@@ -34,12 +34,18 @@ class GroupsController < ApplicationController
     @group = @user.groups.find_by(id: params[:id])
     @new_user = User.find_by(name: params[:new_user][:name])
     unless @new_user
-      render 'forbidden'
+      render 'notfound'
       return
     end
-    group = @user.groups.find_by(id: params[:id])
-    group.users.push(@new_user)
+    @group.users.push(@new_user)
     render 'show'
+  end
+
+  def exit_group
+    @user = current_user
+    group = @user.groups.find_by(id: params[:id])
+    group.users.destroy(@user)
+    redirect_to user_url
   end
 
   private

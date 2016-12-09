@@ -5,6 +5,8 @@
 
 <%= link_to "Add User", {controller: 'groups', action: 'add_user', user_id: @user.id, id: @group.id} %>
 
+<%= link_to "Exit Group", {controller: 'groups', action: 'exit_group', user_id: @user.id, id: @group.id} %>
+
 
  <!-- <ul>
   <% @group.users.each do |user| %>
