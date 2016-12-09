@@ -19,3 +19,7 @@
   color: #BCC2C2;
   font-family: Helvetica, Arial, Sans-Serif;
 }
+
+ul {
+  list-style: none
+}
