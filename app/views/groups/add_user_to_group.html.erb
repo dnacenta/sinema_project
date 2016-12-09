@@ -1,0 +1,5 @@
+<%= form_for :new_user, url: add_user_url do |f| %>
+    <%= f.label      :name %><br>
+    <%= f.text_field :name, placeholder: "Username" %>
+    <%= f.submit 'Add User' %>
+<% end %>
