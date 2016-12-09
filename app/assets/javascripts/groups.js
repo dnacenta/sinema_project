@@ -50,4 +50,7 @@ function handleError(error){
 
 //----------------------------------//
 
-$('.group.show').on('ready', getEvents)
+$(document).on('ready', function(){
+  getEvents();
+  $('#btn-group').on('click', getEvents);
+})
