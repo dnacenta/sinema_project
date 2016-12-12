@@ -23,6 +23,15 @@ Group.create([
   {name: 'Sumugglers for love'}
 ])
 
+Choice.create([
+  {title: 'Lala', date: '2016-12-12'},
+  {title: 'lele', date: '2016-12-13'},
+  {title: 'li', date: '2016-12-24'},
+  {title: 'lo', date: '2016-12-23'},
+  {title: 'lu', date: '2016-12-12'},
+  {title: 'la', date: '2016-12-11'},
+  ])
+
 u = User.find(1)
 u2 = User.find(2)
 u3 = User.find(3)

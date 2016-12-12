@@ -8,18 +8,33 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-      <div id="top_bar">
-        <% if user_signed_in? %>
-          <p><%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
-        <% else %>
-          <p>
-            <%= link_to 'Sign_up', new_user_registration_path %> |
-            <%= link_to 'Sign_in', new_user_session_path %>
-          </p>
-        <% end %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          </button>
+          <a class="navbar-brand" href="#">Sinema</a>
+        </div>
+          <ul class="nav navbar-nav navbar-brand navbar-right">
+            <% if user_signed_in? %>
+              <p>
+                <%= link_to user_path(@user), method: :get do %>
+                  <%= @user.name %>
+                <% end %> |
+                <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+              </p>
+            <% else %>
+              <p>
+                <%= link_to 'Sign_up', new_user_registration_path %> |
+                <%= link_to 'Sign_in', new_user_session_path %>
+              </p>
+            <% end %>
+          </ul>
+        </div>
       </div>
+    </nav>
 
     <%= yield %>
-    
+
   </body>
 </html>

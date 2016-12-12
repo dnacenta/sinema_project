@@ -1,13 +1,6 @@
-<header>
-  <%= link_to user_path(@user), method: :get do %>
-    <%= @user.name %>
-  <% end %>
-</header>
-
 <h1>New Group</h1>
 
 <%= form_for [@user, @group] do |f| %>
-    <%= f.label      :name %><br>
-    <%= f.text_field :name, placeholder: "Group 1" %>
+    <%= f.text_field :name, placeholder: "Group Name" %>
     <%= f.submit %>
 <% end %>

@@ -2,6 +2,7 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 // api_key = 9912e617f1d163b534e15c4c8b778da1
+var filmpick;
 
 function getEvents(){
   var date         = new Date();
@@ -29,20 +30,30 @@ function getEvents(){
     });
 }
 
-function showEvents(response) {
+function showEvents(response){
   var imageUrl  = 'https://image.tmdb.org/t/p/w500';
   var films     = response.results
+  console.log(response);
 
-  films.forEach(function(film) {
+  films.forEach(function(film){
+    var filmpick = film
     var posterUrl = film.poster_path
     var poster    = imageUrl + posterUrl;
-    var web       = 'https://developers.themoviedb.org/';
-    var html = '<li><a href="' + web +'"><img id="film" src="' + poster + '"></li>';
+    var html = '<li><button class="btn btn-primary" type="button" onclick="savePick()"><img src="' + poster + '"></button></li>';
 
     $('#img').append(html);
-    console.log('You are walking forward bro!');
+    console.log('walking forward!');
   });
 }
+
+// function savePick(){
+//   $.ajax({
+//       type: "GET",
+//       url:"/choices",
+//       success:,
+//       error:handleError
+//     });
+// }
 
 function handleError(error){
   console.log(error);

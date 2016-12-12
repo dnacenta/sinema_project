@@ -2,14 +2,18 @@
 
 <%@user.groups.each do |group|%>
 
-  <button id="btn-group" type="button">
+<div class="groups">
+  <button class ="btn btn-primary btn-lg" type="button">
     <%= link_to user_group_path(@user, group), method: :get do %>
       <%= group.name %>
     <% end %>
   </button>
-  
+</div>
+
 <%end%>
 
-<%= link_to new_user_group_path(@user), method: :get do %>
-  New Group
-<% end %>
+<button class ="btn btn-primary btn-success btn-lg" type="button">
+  <%= link_to new_user_group_path(@user), method: :get do %>
+    New Group
+  <% end %>
+</button>

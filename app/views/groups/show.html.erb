@@ -1,17 +1,16 @@
-
-<%= link_to user_path(@user), method: :get do %>
-  <%= @user.name %>
-<% end %>
-
 <h2><%=@group.name%></h2>
 
+<button class="btn btn-success" type="button">
 <%= link_to add_user_path(@user, @group), method: :get do %>
   Add User
 <% end %>
+</button>
 
-<%= link_to exit_group_path(@user, @group), method: :get do %>
-  Exit Group
-<% end %>
+<button class="btn btn-danger" type="button">
+  <%= link_to exit_group_path(@user, @group), method: :get do %>
+    Exit Group
+  <% end %>
+</button>
 
  <!-- <ul>
   <% @group.users.each do |user| %>
