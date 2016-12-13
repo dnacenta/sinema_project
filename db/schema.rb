@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161212094055) do
 
   create_table "choices", force: :cascade do |t|
     t.string   "title"
-    t.datetime "date"
+    t.string   "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

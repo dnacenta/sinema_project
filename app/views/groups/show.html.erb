@@ -12,6 +12,11 @@
   <% end %>
 </button>
 
+<button class="btn btn-success" type="button">
+<%= link_to add_user_path(@user, @group), method: :get do %>
+  Your Choices
+<% end %>
+
  <!-- <ul>
   <% @group.users.each do |user| %>
     <li><%= user.name %></li>
