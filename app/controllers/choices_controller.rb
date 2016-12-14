@@ -6,13 +6,13 @@ class ChoicesController < ApplicationController
   end
 
   def create
-    title =
-    date  =
+    @title = params[:title]
+    Choice.create(choice_params)
   end
 
   private
 
-  def book_param
-      params.require(choice).permit(:title, :date)
+  def choice_params
+      params.require(choice).permit(:title)
   end
 end

@@ -1,7 +1,5 @@
-<%= link_to user_path(@user), method: :get do %>
-  <%= @user.name %>
-<% end %>
-
-<%@choices.each do |choice|%>
+<%@user.choices.each do |choice|%>
     <%= choice.title %>
 <% end %>
+
+<h2>Your Choices:</h2>
