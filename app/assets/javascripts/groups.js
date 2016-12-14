@@ -2,6 +2,8 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 // api_key = 9912e617f1d163b534e15c4c8b778da1
+
+
 var filmPick;
 
 function getEvents(){
@@ -26,7 +28,8 @@ function getEvents(){
       type: "GET",
       url:"https://api.themoviedb.org/3/discover/movie?api_key=9912e617f1d163b534e15c4c8b778da1&language=en-UK&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte="
           +rdg+
-          "&primary_release_date.lte="+rdl,
+          "&primary_release_date.lte="
+          +rdl,
       success: showEvents,
       error: handleError
     });
@@ -44,21 +47,24 @@ function showEvents(response){
     var poster    = imageUrl + posterUrl;
     var html      = '<li><button value="'
                     + filmTtile +
-                    '" class="btn btn-primary" type="button"><img src="'
+                    '"class="btn btn-primary film-img-js" type="button"><img src="'
                     + poster +
                     '"></button></li>';
 
     $('#img').append(html);
+
+
     console.log('walking forward!');
   });
+  $('.film-img-js').on('click',savePick)
 }
 
 function savePick(event){
   event.currentTarget.value
   $.ajax({
     type: "POST",
-    url: create_choice_path,
-    data: { title: event.currentTarget.value},
+    url: '/create_choice_url',
+    data: {title: event.currentTarget.value},
     error: handleError
   });
   console.log('yeah baby')
@@ -72,5 +78,6 @@ function handleError(error){
 
 $(document).on('ready', function(){
   getEvents();
-  $('.btn.btn-primary').on('click', savePick)
+  // $('.film-img-js').on('click', savePick)
+  // $('.film-img-js').on('click', function(event){ console.log('ENTRA PUTO');})
 })
