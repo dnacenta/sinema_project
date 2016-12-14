@@ -61,6 +61,7 @@ function savePick(event){
     data: { title: event.currentTarget.value},
     error: handleError
   });
+  console.log('yeah baby')
 }
 
 function handleError(error){
@@ -71,4 +72,5 @@ function handleError(error){
 
 $(document).on('ready', function(){
   getEvents();
+  $('.btn.btn-primary').on('click', savePick)
 })
