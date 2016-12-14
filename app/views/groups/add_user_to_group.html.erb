@@ -1,5 +1,6 @@
+<h2>Add User</h2>
+
 <%= form_for :new_user, url: add_user_url do |f| %>
-    <%= f.label      :name %><br>
-    <%= f.text_field :name, placeholder: "Username" %>
-    <%= f.submit 'Add User' %>
+    <%= f.text_field :name, class:"form-control", placeholder: "Username" %>
+    <%= f.submit 'Add User', class:"btn btn-success log-in" %>
 <% end %>
