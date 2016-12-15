@@ -4,8 +4,6 @@
 // api_key = 9912e617f1d163b534e15c4c8b778da1
 
 
-var filmPick;
-
 function getEvents(){
   var date         = new Date();
   var firstMonth   = date.getUTCMonth() + 1;
@@ -41,7 +39,6 @@ function showEvents(response){
   console.log(response);
 
   films.forEach(function(film){
-    var filmPick  = film;
     var filmTtile = film.original_title;
     var posterUrl = film.poster_path;
     var poster    = imageUrl + posterUrl;
@@ -54,29 +51,37 @@ function showEvents(response){
     $('.film-container').append(html);
   });
 
-  $('.film-img-js').on('click',savePick)
+  $('.film-img-js').on('click',saveChoice)
 }
 
-function savePick(event){
+function saveChoice(event){
   event.currentTarget.getAttribute('value')
 
-  var userId  = $('.film-container')[0].dataset.user
-  var groupId = $('.film-container')[0].dataset.group
+  var userId    = $('.film-container')[0].dataset.user
+  var groupId   = $('.film-container')[0].dataset.group
+  var posterUrl = event.currentTarget.getAttribute('src')
+
+  console.log(posterUrl);
 
   $.ajax({
     type: "POST",
-    url: '/users/'+ userId +'/groups/'+ groupId +'/choices',
+    url: '/users/'+ userId +'/groups/'+ groupId +'/choices/create',
     data: {title: event.currentTarget.getAttribute('value'),
+           poster_url: posterUrl,
            user_id: userId,
            group_id: groupId,
           },
     success: postSuccess,
-    error: handleError
+    error: postError
   });
 }
 
 function postSuccess(){
   console.log('success');
+}
+
+function postError(error){
+  console.log(error.responseText);
 }
 
 function handleError(error){

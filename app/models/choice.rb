@@ -1,4 +1,4 @@
 class Choice < ApplicationRecord
-  has_many :picks
-  has_many :choices, through: :picks
+  belongs_to :user
+  belongs_to :group
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/groups/:id/add_user_to_group', to: 'groups#add_user_to_group'
   post '/users/:user_id/groups/:id/add_user_to_group', to: 'groups#add_user', as: :add_user
 
-  post '/users/:user_id/groups/:group_id/choices', to: 'choices#create', as: :create_choice
+  post '/users/:user_id/groups/:group_id/choices/create', to: 'choices#create', as: :create_choice
 
   root 'users#show'
 

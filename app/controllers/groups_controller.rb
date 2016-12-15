@@ -45,6 +45,8 @@ class GroupsController < ApplicationController
   def exit_group
     @user = current_user
     group = @user.groups.find_by(id: params[:id])
+    @choice = Choice.where(user_id: @user.id, group_id: group.id)
+    @user.choices.destroy(@choice)
     members = group.users
     members.destroy(@user)
     if members.empty?
