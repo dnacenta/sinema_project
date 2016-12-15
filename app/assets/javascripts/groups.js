@@ -51,11 +51,9 @@ function showEvents(response){
                     + poster +
                     '"></button></li>';
 
-    $('#img').append(html);
-
-
-    console.log('walking forward!');
+    $('.film-container').append(html);
   });
+
   $('.film-img-js').on('click',savePick)
 }
 
@@ -67,7 +65,6 @@ function savePick(event){
     data: {title: event.currentTarget.value},
     error: handleError
   });
-  console.log('yeah baby')
 }
 
 function handleError(error){
@@ -78,6 +75,4 @@ function handleError(error){
 
 $(document).on('ready', function(){
   getEvents();
-  // $('.film-img-js').on('click', savePick)
-  // $('.film-img-js').on('click', function(event){ console.log('ENTRA PUTO');})
 })
