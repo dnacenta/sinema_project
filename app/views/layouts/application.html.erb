@@ -5,9 +5,6 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="bower_components/es6-promise/es6-promise.auto.min.js"></script>
-    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
@@ -29,7 +26,7 @@
             <% else %>
               <p>
                 <%= link_to 'Sign up', new_user_registration_path %> |
-                <%= link_to 'Sign in', new_user_session_path %>
+                <%= link_to 'Log in', new_user_session_path %>
               </p>
             <% end %>
           </ul>

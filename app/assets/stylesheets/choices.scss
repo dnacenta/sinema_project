@@ -5,8 +5,13 @@
 .film-choice {
   border-radius: 5%;
   margin-bottom: 2vh;
-  margin-right: 4%;
-  width: 30vw;
-  cursor: pointer;
+  margin-left: 10%;
+  width: 15vw;
+  cursor: url("/assets/heart.png"), auto;
   float: left;
+}
+.film-user{
+  float: left;
+  margin-right: 60%;
+  margin-left: 5%;
 }
