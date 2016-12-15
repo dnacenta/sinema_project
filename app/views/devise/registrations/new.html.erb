@@ -23,7 +23,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label 'Confirm Password' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -31,5 +31,9 @@
     <%= f.submit "Sign up", class:"btn btn-success log-in" %>
   </div>
 <% end %>
+
+<footer>
+  <p>github.com/vader0</p>
+</footer>
 
 <%= render "devise/shared/links" %>

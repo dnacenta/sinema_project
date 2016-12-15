@@ -287,7 +287,7 @@ th {
     border: 1px solid #ddd !important;
   }
 
-  
+
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -7075,6 +7075,16 @@ a.list-group-item-danger.active:focus {
 
 .log-in {
   margin-top: 2vh;
+}
+
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #375a7f;
+  text-align: right;
 }
 
 ul {
