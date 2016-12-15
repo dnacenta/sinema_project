@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   root 'users#show'
 
-  resources :users do
-    resources :groups do
+  resources :users, except:[:index] do
+    resources :groups, except:[:index] do
       resources :choices, except: [:create]
     end
   end

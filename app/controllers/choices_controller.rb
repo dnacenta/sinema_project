@@ -7,12 +7,14 @@ class ChoicesController < ApplicationController
 
   def create
     @title = params[:title]
+    @user  = User.find(params[:user_id])
+    @group = Group.find(params[:group_id])
     Choice.create(choice_params)
   end
 
   private
 
   def choice_params
-      params.require(choice).permit(:title)
+    params.require(choice).permit(:title)
   end
 end

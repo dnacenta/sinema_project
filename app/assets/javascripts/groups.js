@@ -45,11 +45,11 @@ function showEvents(response){
     var filmTtile = film.original_title;
     var posterUrl = film.poster_path;
     var poster    = imageUrl + posterUrl;
-    var html      = '<li><button value="'
+    var html      = '<li><img value="'
                     + filmTtile +
-                    '"class="btn btn-primary film-img-js" type="button"><img src="'
+                    '" class="film-img-js" src="'
                     + poster +
-                    '"></button></li>';
+                    '"></li>';
 
     $('.film-container').append(html);
   });
@@ -58,13 +58,25 @@ function showEvents(response){
 }
 
 function savePick(event){
-  event.currentTarget.value
+  event.currentTarget.getAttribute('value')
+
+  var userId  = $('.film-container')[0].dataset.user
+  var groupId = $('.film-container')[0].dataset.group
+
   $.ajax({
     type: "POST",
-    url: '/create_choice_url',
-    data: {title: event.currentTarget.value},
+    url: '/users/'+ userId +'/groups/'+ groupId +'/choices',
+    data: {title: event.currentTarget.getAttribute('value'),
+           user_id: userId,
+           group_id: groupId,
+          },
+    success: postSuccess,
     error: handleError
   });
+}
+
+function postSuccess(){
+  console.log('success');
 }
 
 function handleError(error){
