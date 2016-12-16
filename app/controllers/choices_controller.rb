@@ -16,12 +16,9 @@ class ChoicesController < ApplicationController
     user_choice  = params[:user_id]
     group_choice = params[:group_id]
 
-    unless Choice.where(poster_url: poster)
     choice = Choice.create(title: title,
                            poster_url: poster,
                            user_id: user_choice,
                            group_id: group_choice)
-    end
-
   end
 end
