@@ -39,6 +39,15 @@ body {
   margin: 0;
   text-align: center;
 }
+
+body.sessions,
+body.registrations {
+  background-image: url("/assets/cinema-seats.jpg");
+height: 80vh;
+width: auto;
+background-size: cover;
+}
+
 article,
 aside,
 details,
