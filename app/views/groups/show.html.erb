@@ -1,4 +1,4 @@
-<h2><%=@group.name%></h2>
+<h2 id="group-list"><%=@group.name%></h2>
 
 <button class="btn btn-default" type="button">
   <%= link_to add_user_path(@user, @group), method: :get do %>
@@ -19,3 +19,23 @@
 </button>
 
 <ul class="film-container" data-user="<%= @user.id %>" data-group="<%= @group.id %>"></ul>
+
+<div class="modal fade" id=users-modal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h3 class="modal-title">
+          <span>List of users</span>
+        </h3>
+      </div>
+      <div class="modal-body">
+        <% @group.users.each do |user| %>
+        <p><%=user.name%></p>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

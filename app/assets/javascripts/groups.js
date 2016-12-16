@@ -88,8 +88,13 @@ function handleError(error){
   console.log(error);
 }
 
+function modalShow(){
+  $('#users-modal').modal('show');
+}
+
 //----------------------------------//
 
 $(document).on('ready', function(){
   getEvents();
+  $('#group-list').on('click', modalShow)
 })

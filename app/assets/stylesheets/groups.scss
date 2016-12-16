@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#forbidden {
-  width: 30vw;
-  margin-bottom: 10%;
-}
-
 .film-container {
   list-style: none;
 }
@@ -16,5 +11,14 @@
   margin-bottom: 2vh;
   margin-right: 4%;
   width: 30vw;
+  cursor: pointer;
+}
+
+#forbidden {
+  width: 30vw;
+  margin-bottom: 10%;
+}
+
+#group-list {
   cursor: pointer;
 }

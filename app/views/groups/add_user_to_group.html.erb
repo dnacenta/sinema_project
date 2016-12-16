@@ -1,5 +1,11 @@
 <h2>Add User</h2>
 
+<button class ="btn btn-default back" type="button">
+  <%= link_to user_group_path(@user, @group), method: :get do %>
+    <%= @group.name %>
+  <% end %>
+</button>
+
 <%= form_for :new_user, url: add_user_url do |f| %>
     <%= f.text_field :name, class:"form-control", placeholder: "Username" %>
     <%= f.submit 'Add User', class:"btn btn-success log-in" %>

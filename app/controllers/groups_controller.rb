@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
 
   def add_user_to_group
     @user = current_user
+    @group = @user.groups.find_by(id: params[:id])
   end
 
   def add_user
