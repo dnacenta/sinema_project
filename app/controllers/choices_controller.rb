@@ -5,7 +5,7 @@ class ChoicesController < ApplicationController
   def index
     @user     = current_user
     @group    = Group.find(params[:group_id])
-    @choices  = Choice.where(user_id: @user.id, group_id: @group.id)
+    @choices  = Choice.where(group_id: @group.id)
   end
 
   def create
