@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: vader0
+  api_key: '467596525676216'
+  api_secret: YbnnbUZa8W764TYLUHMRE4ur1PA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: vader0
+  api_key: '467596525676216'
+  api_secret: YbnnbUZa8W764TYLUHMRE4ur1PA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: vader0
+  api_key: '467596525676216'
+  api_secret: YbnnbUZa8W764TYLUHMRE4ur1PA
+  enhance_image_tag: true
+  static_image_support: false
